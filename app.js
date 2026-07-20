@@ -48,15 +48,19 @@ saveBtn.addEventListener("click", () => {
 
     };
 
-    localStorage.setItem("mealbook", JSON.stringify(mealData));
+const mealKey = `mealbook-${getDateKey()}`;
 
-    alert("✅ 今天的餐點已儲存！");
+localStorage.setItem(mealKey, JSON.stringify(mealData));
+
+alert("✅ 今天的餐點已儲存！");
 });
 
 
 // ===== 讀取資料 =====
 
-const savedData = localStorage.getItem("mealbook");
+const mealKey = `mealbook-${getDateKey()}`;
+
+const savedData = localStorage.getItem(mealKey);
 
 if(savedData){
 
