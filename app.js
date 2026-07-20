@@ -107,8 +107,6 @@ function renderExpenses(){
 
         sum += item.amount;
 
-renderExpenses();
-
 expenseList.innerHTML += `
 <li>
     <span>${item.category} ${item.name}</span>
@@ -122,3 +120,4 @@ expenseList.innerHTML += `
     localStorage.setItem("expenses", JSON.stringify(expenses));
 
 }
+renderExpenses();
