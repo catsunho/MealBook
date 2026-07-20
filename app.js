@@ -16,6 +16,18 @@ function updateDate(){
     document.getElementById("today").textContent =
         todayText;
 
+}   // ← updateDate 在這裡結束
+
+function getDateKey(){
+
+    const year = currentDate.getFullYear();
+
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+
+    const day = String(currentDate.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+
 }
 // ===== 儲存資料 =====
 const saveBtn = document.getElementById("saveBtn");
@@ -152,6 +164,8 @@ function deleteExpense(id){
 renderExpenses();
 
 updateDate();
+
+console.log(getDateKey());
 
 document.getElementById("nextDay").addEventListener("click", () => {
 
