@@ -19,7 +19,32 @@
     <p id="today"></p>
     </div>
         <div class="meal-card">
+<div class="expense-card">
 
+    <h3>💰 今日花費</h3>
+
+    <input
+        type="text"
+        id="expenseName"
+        placeholder="品項（例如：雞腿）">
+
+    <input
+        type="number"
+        id="expenseAmount"
+        placeholder="金額">
+
+    <button id="addExpense">
+        ➕ 新增花費
+    </button>
+
+    <ul id="expenseList"></ul>
+
+    <h2>
+        今日總計：
+        $<span id="total">0</span>
+    </h2>
+
+</div>
     <label>🍳 早餐</label>
     <input type="text" id="breakfast" placeholder="今天早餐吃什麼？">
 
