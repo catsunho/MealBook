@@ -112,8 +112,21 @@ function renderExpenses(){
 
 expenseList.innerHTML += `
 <li>
-    <span>${item.category} ${item.name}</span>
-    <span>$${item.amount}</span>
+
+    <span>
+        ${item.category} ${item.name}
+    </span>
+
+    <span>
+
+        $${item.amount}
+
+        <button onclick="deleteExpense(${item.id})">
+            🗑️
+        </button>
+
+    </span>
+
 </li>
 `;
 
@@ -121,6 +134,14 @@ expenseList.innerHTML += `
 
     total.textContent=sum;
     localStorage.setItem("expenses", JSON.stringify(expenses));
+
+}
+
+function deleteExpense(id){
+
+    expenses = expenses.filter(item => item.id !== id);
+
+    renderExpenses();
 
 }
 renderExpenses();
