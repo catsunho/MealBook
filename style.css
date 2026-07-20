@@ -148,3 +148,22 @@ button:hover {
     font-size:16px;
     box-sizing:border-box;
 }
+#expenseList button{
+
+    margin-left:10px;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+#expenseList button:hover{
+
+    transform:scale(1.2);
+
+}
