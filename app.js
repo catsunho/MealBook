@@ -56,3 +56,68 @@ if(savedData){
     document.getElementById("note").value = mealData.note || "";
 
 }
+// ===== 花費 =====
+
+let expenses = [];
+
+const expenseList = document.getElementById("expenseList");
+
+const total = document.getElementById("total");
+
+document.getElementById("addExpense").addEventListener("click", () => {
+
+    const name = document.getElementById("expenseName").value;
+
+    const amount = Number(document.getElementById("expenseAmount").value);
+
+    if(name==="" || amount<=0){
+
+        alert("請輸入品項與金額");
+
+        return;
+
+    }
+
+    expenses.push({
+
+        name,
+
+        amount
+
+    });
+
+    renderExpenses();
+
+    document.getElementById("expenseName").value="";
+
+    document.getElementById("expenseAmount").value="";
+
+});
+
+function renderExpenses(){
+
+    expenseList.innerHTML="";
+
+    let sum=0;
+
+    expenses.forEach(item=>{
+
+        sum += item.amount;
+
+        expenseList.innerHTML += `
+
+        <li>
+
+            <span>${item.name}</span>
+
+            <span>$${item.amount}</span>
+
+        </li>
+
+        `;
+
+    });
+
+    total.textContent=sum;
+
+}
