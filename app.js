@@ -89,6 +89,9 @@ expenses.push({
     amount
 });
 
+console.log(expenses);
+
+
     renderExpenses();
 
     document.getElementById("expenseName").value="";
