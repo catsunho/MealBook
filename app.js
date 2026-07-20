@@ -152,3 +152,19 @@ function deleteExpense(id){
 renderExpenses();
 
 updateDate();
+
+document.getElementById("nextDay").addEventListener("click", () => {
+
+    currentDate.setDate(currentDate.getDate() + 1);
+
+    updateDate();
+
+});
+
+document.getElementById("prevDay").addEventListener("click", () => {
+
+    currentDate.setDate(currentDate.getDate() - 1);
+
+    updateDate();
+
+});
