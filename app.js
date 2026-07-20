@@ -1,5 +1,5 @@
 // 取得今天日期
-const today = new Date();
+let currentDate = new Date();
 
 const options = {
     year: "numeric",
@@ -8,10 +8,15 @@ const options = {
     weekday: "long"
 };
 
-const todayText = today.toLocaleDateString("zh-TW", options);
+function updateDate(){
 
-// 顯示日期
-document.getElementById("today").textContent = todayText;
+    const todayText =
+        currentDate.toLocaleDateString("zh-TW", options);
+
+    document.getElementById("today").textContent =
+        todayText;
+
+}
 // ===== 儲存資料 =====
 const saveBtn = document.getElementById("saveBtn");
 
@@ -145,3 +150,5 @@ function deleteExpense(id){
 
 }
 renderExpenses();
+
+updateDate();
