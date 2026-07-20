@@ -102,3 +102,40 @@ button:hover {
 #saveBtn{
     margin-top:20px;
 }
+.expense-card{
+
+    margin-top:25px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+}
+
+.expense-card input{
+
+    margin-top:10px;
+
+}
+
+#expenseList{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+#expenseList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:10px 0;
+
+    border-bottom:1px solid #eee;
+
+}
