@@ -63,3 +63,39 @@ button:hover {
     font-size:18px;
     font-weight:bold;
 }
+.meal-card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.meal-card label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#2c7a4b;
+}
+
+.meal-card input,
+.meal-card textarea{
+
+    width:100%;
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    box-sizing:border-box;
+
+}
+
+.meal-card textarea{
+
+    resize:none;
+
+}
