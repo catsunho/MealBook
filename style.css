@@ -45,3 +45,21 @@ button {
 button:hover {
     background: #23633d;
 }
+
+.date-card{
+    background:#eef8f1;
+    border-radius:15px;
+    padding:15px;
+    margin:20px 0;
+}
+
+.date-card h3{
+    margin:0;
+    color:#2c7a4b;
+}
+
+.date-card p{
+    margin-top:8px;
+    font-size:18px;
+    font-weight:bold;
+}
