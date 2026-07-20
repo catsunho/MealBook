@@ -78,13 +78,15 @@ document.getElementById("addExpense").addEventListener("click", () => {
 
     }
 
-    expenses.push({
+const category =
+    document.getElementById("expenseCategory").value;
 
-        name,
-
-        amount
-
-    });
+expenses.push({
+    id: Date.now(),
+    category,
+    name,
+    amount
+});
 
     renderExpenses();
 
@@ -104,17 +106,12 @@ function renderExpenses(){
 
         sum += item.amount;
 
-        expenseList.innerHTML += `
-
-        <li>
-
-            <span>${item.name}</span>
-
-            <span>$${item.amount}</span>
-
-        </li>
-
-        `;
+expenseList.innerHTML += `
+<li>
+    <span>${item.category} ${item.name}</span>
+    <span>$${item.amount}</span>
+</li>
+`;
 
     });
 
