@@ -260,8 +260,19 @@ document.getElementById("prevDay").addEventListener("click", () => {
     loadExpenses();
 
 });
+const historyPanel =
+    document.getElementById("historyPanel");
+
 document.getElementById("historyBtn").addEventListener("click", () => {
 
-    alert("📚 歷史紀錄（即將完成）");
+    if(historyPanel.style.display === "block"){
+
+        historyPanel.style.display = "none";
+
+    }else{
+
+        historyPanel.style.display = "block";
+
+    }
 
 });
