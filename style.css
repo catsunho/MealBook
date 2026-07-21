@@ -213,3 +213,30 @@ button:hover {
     margin-top:0;
 
 }
+#historyList{
+    list-style: none;
+    padding: 0;
+}
+
+#historyList li{
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 10px;
+    background: #f6f6f6;
+
+    cursor: pointer;
+
+    color: #2a72d4;
+
+    font-weight: bold;
+
+    transition: .2s;
+}
+
+#historyList li:hover{
+    background: #dbeeff;
+}
+
+#historyList li:active{
+    transform: scale(.98);
+}
