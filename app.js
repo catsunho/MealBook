@@ -100,9 +100,18 @@ function loadMeals(){
 }
 // ===== 花費 =====
 
-const expenseKey = `expenses-${getDateKey()}`;
-let expenses =
-    JSON.parse(localStorage.getItem(expenseKey)) || [];
+let expenses = [];
+
+function loadExpenses(){
+
+    const expenseKey = `expenses-${getDateKey()}`;
+
+    expenses =
+        JSON.parse(localStorage.getItem(expenseKey)) || [];
+
+    renderExpenses();
+
+}
 
 const expenseList = document.getElementById("expenseList");
 
@@ -176,7 +185,9 @@ expenseList.innerHTML += `
     });
 
     total.textContent=sum;
-    localStorage.setItem(expenseKey, JSON.stringify(expenses));
+    const expenseKey = `expenses-${getDateKey()}`;
+
+localStorage.setItem(expenseKey, JSON.stringify(expenses));
 
 }
 
