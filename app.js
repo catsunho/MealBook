@@ -119,6 +119,9 @@ function loadExpenses(){
 
 const expenseList = document.getElementById("expenseList");
 
+const categorySummary =
+    document.getElementById("categorySummary");
+
 const total = document.getElementById("total");
 
 document.getElementById("addExpense").addEventListener("click", () => {
@@ -159,6 +162,8 @@ console.log(expenses);
 function renderExpenses(){
 
     expenseList.innerHTML="";
+    
+    categorySummary.innerHTML = "";
 
     let sum=0;
 
