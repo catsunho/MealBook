@@ -167,9 +167,19 @@ function renderExpenses(){
 
     let sum=0;
 
+    const summary = {};
+
     expenses.forEach(item=>{
 
         sum += item.amount;
+        
+        if(!summary[item.category]){
+
+    summary[item.category] = 0;
+
+}
+
+summary[item.category] += item.amount;
 
 expenseList.innerHTML += `
 <li>
@@ -193,6 +203,17 @@ expenseList.innerHTML += `
 
     });
 
+    for(const category in summary){
+
+    categorySummary.innerHTML += `
+    <li>
+        <span>${category}</span>
+        <span>$${summary[category]}</span>
+    </li>
+    `;
+
+}
+    
     total.textContent=sum;
     const expenseKey = `expenses-${getDateKey()}`;
 
