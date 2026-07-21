@@ -280,10 +280,25 @@ function renderHistory(){
         const date = key.replace("mealbook-", "");
 
         historyList.innerHTML += `
-        <li>${date}</li>
+        <li onclick="openHistory('${date}')">
+        📅 ${date}
+        </li>
         `;
 
     });
+
+}
+function openHistory(date){
+
+    currentDate = new Date(date);
+
+    updateDate();
+
+    loadMeals();
+
+    loadExpenses();
+
+    historyPanel.style.display = "none";
 
 }
 const historyPanel =
