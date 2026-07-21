@@ -194,3 +194,22 @@ button:hover {
     opacity:0.9;
 
 }
+.history-panel{
+
+    display:none;
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:#f7f7f7;
+
+}
+
+.history-panel h3{
+
+    margin-top:0;
+
+}
