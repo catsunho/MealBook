@@ -298,7 +298,12 @@ function openHistory(date){
 
     loadExpenses();
 
-    historyPanel.style.display = "none";
+    // historyPanel.style.display = "none";
+
+document.documentElement.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
 
 }
 const historyPanel =
