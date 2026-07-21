@@ -199,11 +199,11 @@ function deleteExpense(id){
 
 }
 
-renderExpenses();
-
 updateDate();
 
 loadMeals();
+
+loadExpenses();
 
 console.log(getDateKey());
 
@@ -215,6 +215,8 @@ document.getElementById("nextDay").addEventListener("click", () => {
 
     loadMeals();
 
+    loadExpenses();
+
 });
 
 document.getElementById("prevDay").addEventListener("click", () => {
@@ -224,4 +226,7 @@ document.getElementById("prevDay").addEventListener("click", () => {
     updateDate();
 
     loadMeals();
+
+    loadExpenses();
+
 });
