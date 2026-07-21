@@ -58,23 +58,44 @@ alert("✅ 今天的餐點已儲存！");
 
 // ===== 讀取資料 =====
 
-const mealKey = `mealbook-${getDateKey()}`;
+function loadMeals(){
 
-const savedData = localStorage.getItem(mealKey);
+    const mealKey = `mealbook-${getDateKey()}`;
 
-if(savedData){
+    const savedData = localStorage.getItem(mealKey);
 
-    const mealData = JSON.parse(savedData);
+    if(savedData){
 
-    document.getElementById("breakfast").value = mealData.breakfast || "";
+        const mealData = JSON.parse(savedData);
 
-    document.getElementById("lunch").value = mealData.lunch || "";
+        document.getElementById("breakfast").value =
+            mealData.breakfast || "";
 
-    document.getElementById("dinner").value = mealData.dinner || "";
+        document.getElementById("lunch").value =
+            mealData.lunch || "";
 
-    document.getElementById("snack").value = mealData.snack || "";
+        document.getElementById("dinner").value =
+            mealData.dinner || "";
 
-    document.getElementById("note").value = mealData.note || "";
+        document.getElementById("snack").value =
+            mealData.snack || "";
+
+        document.getElementById("note").value =
+            mealData.note || "";
+
+    }else{
+
+        document.getElementById("breakfast").value = "";
+
+        document.getElementById("lunch").value = "";
+
+        document.getElementById("dinner").value = "";
+
+        document.getElementById("snack").value = "";
+
+        document.getElementById("note").value = "";
+
+    }
 
 }
 // ===== 花費 =====
@@ -165,9 +186,12 @@ function deleteExpense(id){
     renderExpenses();
 
 }
+
 renderExpenses();
 
 updateDate();
+
+loadMeals();
 
 console.log(getDateKey());
 
@@ -177,6 +201,8 @@ document.getElementById("nextDay").addEventListener("click", () => {
 
     updateDate();
 
+    loadMeals();
+
 });
 
 document.getElementById("prevDay").addEventListener("click", () => {
@@ -185,4 +211,5 @@ document.getElementById("prevDay").addEventListener("click", () => {
 
     updateDate();
 
+    loadMeals();
 });
