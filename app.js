@@ -106,8 +106,12 @@ function loadExpenses(){
 
     const expenseKey = `expenses-${getDateKey()}`;
 
+    console.log("目前讀取：", expenseKey);
+
     expenses =
         JSON.parse(localStorage.getItem(expenseKey)) || [];
+
+    console.log(expenses);
 
     renderExpenses();
 
