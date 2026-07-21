@@ -260,3 +260,8 @@ document.getElementById("prevDay").addEventListener("click", () => {
     loadExpenses();
 
 });
+document.getElementById("historyBtn").addEventListener("click", () => {
+
+    alert("📚 歷史紀錄（即將完成）");
+
+});
