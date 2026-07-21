@@ -260,6 +260,32 @@ document.getElementById("prevDay").addEventListener("click", () => {
     loadExpenses();
 
 });
+function renderHistory(){
+
+    const historyList =
+        document.getElementById("historyList");
+
+    historyList.innerHTML = "";
+
+    const keys = Object.keys(localStorage);
+
+    const mealKeys = keys.filter(key =>
+        key.startsWith("mealbook-")
+    );
+
+    mealKeys.sort().reverse();
+
+    mealKeys.forEach(key => {
+
+        const date = key.replace("mealbook-", "");
+
+        historyList.innerHTML += `
+        <li>${date}</li>
+        `;
+
+    });
+
+}
 const historyPanel =
     document.getElementById("historyPanel");
 
@@ -270,6 +296,8 @@ document.getElementById("historyBtn").addEventListener("click", () => {
         historyPanel.style.display = "none";
 
     }else{
+
+        renderHistory();
 
         historyPanel.style.display = "block";
 
